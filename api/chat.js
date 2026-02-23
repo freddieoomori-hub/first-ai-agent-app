@@ -6,7 +6,7 @@ export default async function handler(req, res) {
       return res.status(405).json({ error: "Method not allowed" });
     }
 
-    // --- Body を手動で読み取る（Vercel ではこれが必要になることがある） ---
+    // --- Body を手動で読み取る（Vercel では req.body が undefined になることがある） ---
     const buffers = [];
     for await (const chunk of req) {
       buffers.push(chunk);
