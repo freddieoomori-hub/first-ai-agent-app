@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     }
 
 // ---
-const message2 = "天気：" + message;
+//const message2 = "天気：" + message;
 // ---
 
 
@@ -31,11 +31,11 @@ const message2 = "天気：" + message;
 
     const completion = await client.chat.completions.create({
       model: "gpt-4o-mini",
-      messages: [{ role: "user", content: message2 }]
+      messages: [{ role: "user", content: message }]
     });
 
     res.status(200).json({
-      reply: completion.choices[0].message2.content
+      reply: completion.choices[0].message.content
     });
 
   } catch (error) {
