@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     }
 
 // ---
-message = '天気：' + message;
+const message = '天気：' + message;
 // ---
 
 
